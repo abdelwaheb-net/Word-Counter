@@ -1,0 +1,2 @@
+# Word Counter
+Le Word Counter est une application web simple qui permet à l'utilisateur d'entrer un texte dans une zone, puis de compter automatiquement :  Le nombre de mots  Le nombre de caractères  (optionnel) Le nombre de phrases, de paragraphes, ou la longueur moyenne des mots  C'est un outil utile pour les écrivains, étudiants, journalistes ou toute personne ayant besoin d’analyser un texte rapidement.
