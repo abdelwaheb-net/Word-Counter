@@ -47,7 +47,7 @@ Ajoute ici une capture si tu veux :
 
 
 ## 📁 Structure du projet
-
+```
 Word-Counter/
 ├──JQuery
     ├──jquery-3.7.1.min.js
@@ -55,7 +55,7 @@ Word-Counter/
 ├── screenshot.png
 ├── script.js
 └── README.md
-
+```
 ## 📄 Licence
 
 Ce projet est open-source sous licence MIT.
