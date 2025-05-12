@@ -44,6 +44,7 @@ Add a screenshot here if you like:
 
 👉 [Click here to try Word Counter](https://abdelwaheb-net.github.io/Word-Counter/)
 
+
 ## 📁 Project Structure
 
 Word-Counter/
