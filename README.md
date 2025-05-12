@@ -37,7 +37,7 @@ A simple web application that counts words, characters, and more in a given text
 
 Add a screenshot here if you like:
 
-```markdown
+
 ![Preview of Word Counter](./screenshot.png)
 
 ## 🔗 Live Demo

@@ -37,7 +37,7 @@ Le **Word Counter** est un outil léger et rapide qui permet à l'utilisateur de
 
 Ajoute ici une capture si tu veux :
 
-```markdown
+
 ![Aperçu de Word Counter](./screenshot.png)
 
 ## 🔗 Démo en ligne
