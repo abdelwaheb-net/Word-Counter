@@ -1,7 +1,40 @@
 $(document).ready(function () {
 
-  $("#countBtn").on("click",function () {
-    let text = $("#textInput").val();
+  $("#countBtn").on("click",calculation);
+
+  $("#resetBtn").on("click", function () {
+    console.log("hello world");
+    $("#textInput").val("");
+    $("#wordCount").text("0");
+    $("#charCount").text("0");
+    $("#charCountNoSpace").text("0");
+    $("#phrases").text("0");
+ $("#paragraphes").text("0");
+
+    
+  });
+
+   $("#real-time").on("change",function(){
+    let displayStatus=$('input[name="display"]:checked').val();
+if(displayStatus=='real-time'){
+  $("#countBtn").hide();
+
+}
+   });
+   $("#button-counter").on("change",function(){
+    let displayStatus=$('input[name="display"]:checked').val();
+ if(displayStatus=='button-counter'){
+    $("#countBtn").show();
+   }
+   });
+   
+    
+
+$("#textInput").keyup(()=>{let displayStatus=$('input[name="display"]:checked').val();
+if(displayStatus=='real-time'){calculation()}});
+
+   function calculation(){
+let text = $("#textInput").val();
 
     let words = text.trim().split(/\s+/);
     let wordCount = text === "" ? 0 : words.length;
@@ -25,28 +58,9 @@ $(document).ready(function () {
  
  $("#phrases").text(countsentences);
  $("#paragraphes").text(countpragraphes);
- 
- 
-
-
- 
- 
 
 
 
 
-  });
-
-  $("#resetBtn").on("click", function () {
-    console.log("hello world");
-    $("#textInput").val("");
-    $("#wordCount").text("0");
-    $("#charCount").text("0");
-    $("#charCountNoSpace").text("0");
-    $("#phrases").text("0");
- $("#paragraphes").text("0");
-
-    
-  });
-
+   }
 });
