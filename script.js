@@ -13,6 +13,26 @@ $(document).ready(function () {
  $("#charCountNoSpace").text(characterwithoutspace);
 
 
+ const cleanedText=$("#textInput").val();
+   const normalized = cleanedText.replace(/([.!?])(?!\s)/g, "$1 ");
+ const sentences = normalized.split(/[.!?]\s+/).filter(s => s.trim().length > 0);  
+ let countsentences=sentences.length;
+
+
+ const cleanedparagraph=$("#textInput").val();
+ const paragraphes=cleanedparagraph.split(/\n+/).filter(x=>x.trim().length>0);
+ let countpragraphes=paragraphes.length;
+ 
+ $("#phrases").text(countsentences);
+ $("#paragraphes").text(countpragraphes);
+ 
+ 
+
+
+ 
+ 
+
+
 
 
   });
@@ -23,6 +43,8 @@ $(document).ready(function () {
     $("#wordCount").text("0");
     $("#charCount").text("0");
     $("#charCountNoSpace").text("0");
+    $("#phrases").text("0");
+ $("#paragraphes").text("0");
 
     
   });
