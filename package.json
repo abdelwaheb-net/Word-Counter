@@ -1,0 +1,7 @@
+{
+  "name": "word-counter",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}
