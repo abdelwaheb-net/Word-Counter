@@ -22,5 +22,9 @@ steps:
     cp -r path-to-your-site/* .
     git add .
     git commit -m "Deploy from Azure Pipelines"
-    git push https://$(GH_TOKEN)@github.com/abdelwaheb-net/Word-Counter.git gh-pages --force
+    echo "Token starts with: ${GH_TOKEN:0:4}****"
+
+       git push https://$(GH_TOKEN)@github.com/abdelwaheb-net/Word-Counter.git gh-pages --force
   displayName: 'Deploy to GitHub Pages'
+  env:
+    GH_TOKEN: $(GH_TOKEN)
