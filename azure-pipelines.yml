@@ -4,7 +4,7 @@ trigger:
       - main
 
 variables:
-  - group: Secrets
+  - group: Secrets  # 🔐 Lien vers le groupe contenant GH_TOKEN
 
 pool:
   vmImage: ubuntu-latest
@@ -13,15 +13,15 @@ steps:
   - task: Checkout@1
 
   - script: |
-      echo "🎉 Starting deployment"
+      echo "Déploiement en cours..."
       git config user.email "you@example.com"
       git config user.name "Your Name"
       git checkout gh-pages || git checkout --orphan gh-pages
       git rm -rf .
-      cp -r * .  # copie des fichiers vers la racine
+      cp -r * .  # copie les fichiers vers la racine
       git add .
       git commit -m "Deploy from Azure Pipelines"
       git push https://${GH_TOKEN}@github.com/abdelwaheb-net/Word-Counter.git gh-pages --force
-    displayName: '🚀 Deploy to GitHub Pages'
+    displayName: 'Déployer sur GitHub Pages'
     env:
       GH_TOKEN: $(GH_TOKEN)
