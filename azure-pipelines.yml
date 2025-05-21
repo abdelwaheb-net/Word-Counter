@@ -1,30 +1,27 @@
 trigger:
-- main
+  branches:
+    include:
+      - main
+
+variables:
+  - group: Secrets
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18.x'
-  displayName: 'Install Node.js'
+  - task: Checkout@1
 
-
-# Étape de build éventuelle ici si tu as du build à faire (ex: React, Vue, etc.)
-
-- script: |
-    git config user.email "you@example.com"
-    git config user.name "Your Name"
-    git fetch
-    git checkout gh-pages || git checkout --orphan gh-pages
-    git rm -rf .
-    cp -r path-to-your-site/* .
-    git add .
-    git commit -m "Deploy from Azure Pipelines"
-    echo "Token starts with: ${GH_TOKEN:0:4}****"
-
-       git push https://$(GH_TOKEN)@github.com/abdelwaheb-net/Word-Counter.git gh-pages --force
-  displayName: 'Deploy to GitHub Pages'
-  env:
-    GH_TOKEN: $(GH_TOKEN)
+  - script: |
+      echo "🎉 Starting deployment"
+      git config user.email "you@example.com"
+      git config user.name "Your Name"
+      git checkout gh-pages || git checkout --orphan gh-pages
+      git rm -rf .
+      cp -r * .  # copie des fichiers vers la racine
+      git add .
+      git commit -m "Deploy from Azure Pipelines"
+      git push https://${GH_TOKEN}@github.com/abdelwaheb-net/Word-Counter.git gh-pages --force
+    displayName: '🚀 Deploy to GitHub Pages'
+    env:
+      GH_TOKEN: $(GH_TOKEN)
