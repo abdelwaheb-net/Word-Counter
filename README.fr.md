@@ -59,3 +59,7 @@ Word-Counter/
 ## 📄 Licence
 
 Ce projet est open-source sous licence MIT.
+### 🌐 Langue / Language
+
+- 🇫🇷 [Lire en Français](./README.fr.md)
+- 🇬🇧 [Read in English](./README.md)
